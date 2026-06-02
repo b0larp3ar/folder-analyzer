@@ -1,50 +1,70 @@
 # Folder Analyzer
 
-A Python utility that analyzes folders and provides useful information about their contents.
+A Python desktop application that analyzes folders and displays useful information about their contents.
 
 ## Features
 
-* Counts the total number of files
-* Counts the total number of folders
-* Calculates the total size of a folder
-* Displays files sorted by size
-* Formats file sizes into human-readable units (B, KB, MB, GB, TB)
+* Browse and select folders using a graphical interface
+* Count total files
+* Count total folders
+* Calculate total folder size
+* Display files sorted by size
+* Convert file sizes into human-readable units (B, KB, MB, GB, TB)
+* Display file type statistics
 
 ## Technologies Used
 
 * Python
+* Tkinter
 * os module
 
 ## How to Run
 
 1. Clone the repository
 
-2. Navigate to the project directory:
+```bash
+git clone <repository-url>
+```
 
-3. Run the program: python main.py
+2. Navigate to the project directory
 
-4. Enter the folder path you want to analyze when prompted.
+```bash
+cd folder-analyzer
+```
 
-## Example Output
+3. Run the application
 
-Total Files: 125
+```bash
+python gui.py
+```
 
-Total Folders: 18
+## Current Output
 
-Total Size: 3.42 GB
+The application displays:
 
-Largest Files:
+* Selected folder path
+* Number of folders
+* Number of files
+* Total size
+* Files sorted by size
+* File type counts
 
-* movie.mp4 — 2.10 GB
-* backup.zip — 1.30 GB
-* dataset.csv — 450 MB
+## Project Structure
+
+```text
+folder-analyzer/
+├── main.py        # Analysis logic
+├── gui.py         # Tkinter interface
+├── README.md
+└── .gitignore
+```
 
 ## Future Improvements
 
-* File type statistics
-* Duplicate file detection
+* Scrollable file list
+* Better GUI layout
 * Oldest and newest file analysis
-* Graphical user interface (GUI)
-* Export reports to text or CSV files
-
+* Duplicate file detection
+* Export results to a text file
+* CustomTkinter interface
 
