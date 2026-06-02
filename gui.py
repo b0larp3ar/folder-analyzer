@@ -30,7 +30,7 @@ def analyze():
 
         foldersLabel.config(text=f"Folders: {nfolders}")
         filesLabel.config(text=f"Files: {nfiles}")
-        sizeLabel.config(text=f"Size: {size}")
+        sizeLabel.config(text=f"Size: {main.convertBytes(size)}")
         sortLabel.config(text=sortedText)
         typesLabel.config(text=f"Types: {fileTypes}")
     else:

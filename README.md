@@ -18,6 +18,10 @@ A Python desktop application that analyzes folders and displays useful informati
 * Tkinter
 * os module
 
+## Screenshot
+
+![Folder analyzer](images/Screenshot-1.png)
+
 ## How to Run
 
 1. Clone the repository
