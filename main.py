@@ -28,9 +28,7 @@ def basicInfo(path):
             p=os.path.join(root, i)
             size=size+os.path.getsize(p)
 
-    print(f"Number of folders: {nfolders}")
-    print(f"Number of files: {nfiles}")
-    print(f"Total size: {size}")
+    return nfolders, nfiles, size
 
 #sorting based on file size
 
@@ -44,23 +42,7 @@ def sortSize(path):
             array.append((p, s))
 
     array.sort(key=lambda x:x[1], reverse=True)
-    print(array)
-
-#converting bytes to kb,mb,gb,etc.
-
-def formatSize(path):
-    array=[]
-
-    for root, dirs, files in os.walk(path):
-        for i in files:
-            p=os.path.join(root, i) 
-            s=os.path.getsize(p)
-            array.append((p, s))
-
-    array.sort(key=lambda x:x[1], reverse=True)
-
-    for p, s in array:
-        print(f"{convertBytes(s):>20}  {p}")
+    return array
 
 #File type count
 
@@ -79,21 +61,16 @@ def fileTypeCount(path):
 
     dic=dict(sorted(dic.items(), key=lambda x:x[1], reverse=True))
 
-    print("\nFile Types:\n")
-
-    for extension, count in dic.items():
-        print(f"{extension:<15} {count}")
+    return dic
 
 #analyze folder
 
 def analyzeFolder(path):
-    basicInfo(path)
-    sortSize(path)
-    formatSize(path)
-    fileTypeCount(path)
+    nfolders, nfiles, size=basicInfo(path)
+    array=sortSize(path)
+    dic=fileTypeCount(path)
+    return nfolders, nfiles, size, array, dic
 
-#main
 
-path=str(input("Enter absolute path of the folder: "))
-analyzeFolder(path)
+
 
